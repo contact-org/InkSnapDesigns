@@ -253,6 +253,11 @@
   margin: 0 auto;        /* Centers the image horizontally */
   object-fit: contain;   /* Prevents stretching + cropping */
 }
+    /* Mobile adjustments */
+@media (max-width: 768px) {
+  .slide img {
+    max-height: 70vh;        /* Tighter on phones */
+    width: 100%;
     }
 
     /* Buttons */
@@ -314,12 +319,7 @@
       -webkit-text-fill-color: transparent;
     }
 
-  /* Mobile adjustments */
-@media (max-width: 768px) {
-  .slide img {
-    max-height: 70vh;        /* Tighter on phones */
-    width: 100%;
-  }
+
 }
 }
 
