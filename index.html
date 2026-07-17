@@ -149,28 +149,30 @@
 
     /* Hero */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      padding-top: 8rem;
-      background: var(--gradient-hero);
-      position: relative;
-    }
+  min-height: 65vh;           /* Reasonable height for most screens */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;          /* Reduced from 8rem */
+  padding-bottom: 4rem;       /* Added bottom padding for balance */
+  background: var(--gradient-hero);
+  position: relative;
+}
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 70%, rgba(0,0,0,0.4), transparent 60%);
-      z-index: 1;
-    }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(0,0,0,0.4), transparent 60%);
+  z-index: 1;
+}
 
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-      z-index: 2;
-      position: relative;
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+
     }
 
     .tagline {
@@ -238,15 +240,19 @@
     }
 
     .slide {
-      flex: 0 0 100%;           /* each slide takes full width */
-      width: 100%;
-    }
+  flex: 0 0 100%;
+  width: 100%;
+  /* Optional: add padding or max-height if needed */
+}
 
-    .slide img {
-      width: 95%;
-      height: 850px;
-      display: block;
-      object-fit: cover;
+.slide img {
+  width: 100%;           /* Use full available width */
+  height: auto;          /* Let the image keep its natural aspect ratio */
+  max-height: 85vh;      /* Prevents it from becoming too tall on large screens */
+  display: block;
+  margin: 0 auto;        /* Centers the image horizontally */
+  object-fit: contain;   /* Prevents stretching + cropping */
+}
     }
 
     /* Buttons */
@@ -308,17 +314,13 @@
       -webkit-text-fill-color: transparent;
     }
 
-  .slide {
-  position: relative;           /* This is key – makes absolute positioning work inside */
-  flex: 0 0 100%;
-  width: 100%;
+  /* Mobile adjustments */
+@media (max-width: 768px) {
+  .slide img {
+    max-height: 70vh;        /* Tighter on phones */
+    width: 100%;
+  }
 }
-
-.slide img {
-  width: 100%;
-  height: 800;
-  display: block;
-  object-fit: cover;
 }
 
 /* Text overlay */
@@ -382,20 +384,21 @@
 
     /* Footer */
     footer {
-      text-align: center;
-      padding: 7rem 5% 4rem;
-      color: #888;
-      border-top: 1px solid var(--border);
-      font-size: 0.50rem;
-    }
+  text-align: center;
+  padding: 3rem 5% 2rem;     /* Significantly reduced */
+  color: #888;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;        /* Slightly increased for better readability */
+}
 
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
 
-    footer a:hover {
-      color: var(--pink);
+footer a:hover {
+  color: var(--pink);
+
     }
 
     @media (max-width: 768px) {
