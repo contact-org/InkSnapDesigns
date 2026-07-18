@@ -310,6 +310,93 @@
 }
 
 .dot {
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.slides-wrapper {           /* Add this wrapper if you don't have one */
+  position: relative;
+  width: 100%;
+  min-height: 400px;        /* Fallback */
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;        /* Ensures container has height */
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Buttons - now better aligned */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  transition: background 0.3s;
+  z-index: 20;           /* Higher z-index */
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .slide {
+    min-height: 300px;
+  }
+  
+  .slide img {
+    max-height: 70vh;
+  }
+
+  .carousel-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+  
+  .prev { left: 12px; }
+  .next { right: 12px; }
+}
+
+/* Dots */
+.carousel-dots {
+  text-align: center;
+  padding: 20px 0 10px;
+}
+
+.dot {
   display: inline-block;
   width: 12px;
   height: 12px;
@@ -335,10 +422,7 @@ h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-  
 
-
-}
 }
 
 /* Text overlay */
@@ -473,9 +557,9 @@ footer a:hover {
         <h2>Our Recent Design Samples</h2>
       </div>
    
- <div class="carousel-container">
+ <div class="carousel">
 
-  <div class="carousel-slides" id="slides">
+  <div class="slides-wrapper"
     
     <div class="slide">
       <img src="Image 1.jpg" alt="Image 1">
