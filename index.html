@@ -237,41 +237,38 @@
   transition: transform 0.5s ease-in-out;
   
  /* smooth slide effect */
-    }
+    
 
-    .slide {
+    ..carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;           /* Recommended */
+}
+
+.slide {
   flex: 0 0 100%;
   width: 100%;
-  /* Optional: add padding or max-height if needed */
 }
 
 .slide img {
-  width: 100%;           /* Use full available width */
-  height: auto;          /* Let the image keep its natural aspect ratio */
-  max-height: 85vh;      /* Prevents it from becoming too tall on large screens */
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
   display: block;
-  margin: 0 auto;        /* Centers the image horizontally */
-  object-fit: contain;   /* Prevents stretching + cropping */
+  margin: 0 auto;
+  object-fit: contain;
 }
-    /* Mobile adjustments */
-@media (max-width: 768px) {
-  .slide img {
-    max-height: 70vh;        /* Tighter on phones */
-    width: 100%;
-    }
 
-    /* Buttons */
-   
-
- .carousel-btn {
+/* Buttons */
+.carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  width: 45px;           /* Better for circle */
-  height: 45px;          /* Better for circle */
+  width: 45px;
+  height: 45px;
   font-size: 24px;
   display: flex;
   align-items: center;
@@ -280,7 +277,7 @@
   border-radius: 50%;
   user-select: none;
   transition: background 0.3s;
-  z-index: 10;           /* Important */
+  z-index: 10;
 }
 
 .carousel-btn:hover {
@@ -288,36 +285,57 @@
 }
 
 .prev { left: 15px; }
-.next { right: 15px; }  
-  
-  /* Optional: dots/indicators at bottom */
-    .carousel-dots {
-      text-align: center;
-      padding: 15px 0;
-    }
+.next { right: 15px; }
 
-    .dot {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin: 0 6px;
-      background: #bbb;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-.dot.active { background: #333; }
-    h2 {
-      font-family: 'Bold-Condensed', sans-serif;
-      font-size: clamp(1.9rem, 4vw, 3.5rem);
-      font-weight: 900;
-      text-align: center;
-      margin-bottom: 0.7rem;
-      letter-spacing: -1px;
-      background: linear-gradient(135deg, #6b48ff 0%, #000000 50%, #ff6b35 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .slide img {
+    max-height: 70vh;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .prev { left: 10px; }
+  .next { right: 10px; }
+}
+
+/* Dots */
+.carousel-dots {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active { 
+  background: #333; 
+}
+
+h2 {
+  font-family: 'Bold-Condensed', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 3.5rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 0.7rem;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #6b48ff 0%, #000000 50%, #ff6b35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+  
 
 
 }
