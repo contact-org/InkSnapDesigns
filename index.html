@@ -9,7 +9,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Manrope:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Manrope:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">0
 
   <style>
     :root {
@@ -17,7 +17,7 @@
       --card: #161020;
       --text: #f8f8f8;
       --text-secondary: #d0c0ff;
-      --accent: #ff2e63;
+      --accent: #ff2e63;       /* main call-to-action pink */
       --accent-dark: #d91e50;
       --purple: #6b48ff;
       --pink: #ff4d94;
@@ -73,7 +73,7 @@
     }
 
     .logo {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Bold Condensed', serif;
       font-size: 1.8rem;
       font-weight: 700;
       letter-spacing: -1px;
@@ -149,12 +149,11 @@
 
     /* Hero */
     .hero {
-      min-height: 65vh;
+      min-height: 10vh;
       display: flex;
       align-items: center;
       text-align: center;
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+      padding-top: 8rem;
       background: var(--gradient-hero);
       position: relative;
     }
@@ -185,7 +184,7 @@
     }
 
     h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Bold-Condensed', sans-serif;
       font-size: clamp(5.5rem, 12vw, 9.5rem);
       font-weight: 900;
       line-height: 0.72;
@@ -207,7 +206,7 @@
       color: #FFFFFF;
       max-width: 900px;
       margin: 0 auto 3rem;
-      line-height: 1.4;
+      line-height: 1.;
     }
 
     .hero-buttons {
@@ -217,81 +216,77 @@
       justify-content: center;
     }
 
-    /* Carousel */
+    /* Sections */
+    section {
+      padding: 14vh 0 12vh;
+    }
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     .carousel-container {
-      position: relative;
-      max-width: 100%;
-      margin: 0 auto;
-      overflow: hidden;
-      padding: 2rem 0;
-    }
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
-    .carousel {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .carousel-slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: 100%;
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  
+ /* smooth slide effect */
     }
 
     .slide {
-      flex: 0 0 100%;
-      width: 100%;
-      position: relative;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #111;
-    }
+  flex: 0 0 100%;
+  width: 100%;
+  /* Optional: add padding or max-height if needed */
+}
 
-    .slide img {
-      width: 100%;
-      height: auto;
-      max-height: 75vh;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-      border-radius: 12px;
+.slide img {
+  width: 100%;           /* Use full available width */
+  height: auto;          /* Let the image keep its natural aspect ratio */
+  max-height: 85vh;      /* Prevents it from becoming too tall on large screens */
+  display: block;
+  margin: 0 auto;        /* Centers the image horizontally */
+  object-fit: contain;   /* Prevents stretching + cropping */
+
     }
 
     /* Buttons */
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      border: none;
-      width: 50px;
-      height: 50px;
-      font-size: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border-radius: 50%;
-      user-select: none;
-      transition: all 0.3s;
-      z-index: 30;
-    }
+   
 
-    .carousel-btn:hover {
-      background: rgba(0, 0, 0, 0.85);
-      transform: translateY(-50%) scale(1.1);
-    }
+ .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 45px;           /* Better for circle */
+  height: 45px;          /* Better for circle */
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  transition: background 0.3s;
+  z-index: 10;           /* Important */
+}
 
-    .prev { left: 20px; }
-    .next { right: 20px; }
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
 
-    /* Dots */
+.prev { left: 15px; }
+.next { right: 15px; }  
+  
+  /* Optional: dots/indicators at bottom */
     .carousel-dots {
       text-align: center;
-      padding: 20px 0 10px;
+      padding: 15px 0;
     }
 
     .dot {
@@ -304,39 +299,9 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
-    .dot.active { 
-      background: var(--accent); 
-    }
-
-    /* Overlay */
-    .overlay-text {
-      position: absolute;
-      bottom: 30px;
-      right: 30px;
-      background: rgba(0, 0, 0, 0.65);
-      padding: 12px 18px;
-      border-radius: 8px;
-      color: white;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-      pointer-events: none;
-      max-width: 260px;
-    }
-
-    .overlay-text h3 {
-      margin-bottom: 4px;
-      font-size: 1.25rem;
-      font-weight: bold;
-    }
-
-    .overlay-text p {
-      margin: 0;
-      font-size: 0.95rem;
-      opacity: 0.95;
-    }
-
+.dot.active { background: #333; }
     h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Bold-Condensed', sans-serif;
       font-size: clamp(1.9rem, 4vw, 3.5rem);
       font-weight: 900;
       text-align: center;
@@ -347,42 +312,85 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* Services */
-    .services-grid {
+  .slide {
+  position: relative;           /* This is key – makes absolute positioning work inside */
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 800;
+  display: block;
+  object-fit: cover;
+}
+
+/* Text overlay */
+.overlay-text {
+  position: absolute;
+  bottom: 30px;                 /* distance from bottom – change to top: 30px; for top placement */
+  right: 30px;                    /* or right: 30px; center with left:50%; transform:translateX(-50%) */
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);   /* improves readability on busy images */
+  pointer-events: none;         /* lets clicks pass through to buttons if needed */
+}
+
+.overlay-text h3 {
+  margin-bottom: 2.3px;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.overlay-text p {
+  margin: 0px 0 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Optional: semi-transparent background strip for better contrast */    /* if you want centered text */
+}
+    .portfolio-grid, .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin: 0 auto;
-      max-width: 1200px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30.5rem;
+      margin: 9rem auto;
+      max-width: 1000px;
+    }
+
+    .portfolio-card, .service-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: all 0.5s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .portfolio-card:hover, .service-card:hover {
+      transform: translateY(-14px);
+      border-color: var(--accent);
+      box-shadow: 0 30px 70px rgba(107,72,255,0.22);
     }
 
     .service-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 40px 25px;
+      padding: 5.5.rem 3rem;
       text-align: center;
-      transition: all 0.4s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      border-color: var(--accent);
     }
 
     .service-card h3 {
       color: var(--accent);
       font-size: 1.6rem;
-      margin: 1.5rem 0 1.2rem;
+      margin: 1.9rem 0 2rem;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 3rem 5% 2rem;
+      padding: 7rem 5% 4rem;
       color: #888;
       border-top: 1px solid var(--border);
-      font-size: 0.85rem;
+      font-size: 0.50rem;
     }
 
     footer a {
@@ -395,22 +403,9 @@
     }
 
     @media (max-width: 768px) {
-      .slide img {
-        max-height: 65vh;
-      }
-      .carousel-btn {
-        width: 42px;
-        height: 42px;
-        font-size: 22px;
-      }
-      .prev { left: 12px; }
-      .next { right: 12px; }
-      .overlay-text {
-        bottom: 20px;
-        right: 20px;
-        max-width: 200px;
-        padding: 10px 14px;
-      }
+      .nav-links { gap: 1.8rem; justify-content: center; }
+      .hero-buttons { flex-direction: column; gap: 1.2rem; }
+      h1 { font-size: clamp(3.8rem, 12vw, 6rem); }
     }
   </style>
 </head>
@@ -418,13 +413,18 @@
 
   <header id="header">
     <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
-      <nav>
-        <div class="logo">InkSnap</div>
-        <div class="nav-links">
-          <a href="#portfolio">Designs</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
+      <nav style="display: flex; align-items: center; justify-content: center; gap: 18px; padding: 22px 0;">
+        
+        <div class="logo" style="font-size: 1.8rem; font-weight: bold; color: #6b48ff;">
+          InkSnap
         </div>
+        
+        <div class="nav-links" style="display: flex; gap: 32px;">
+          <a href="#portfolio" style="text-decoration: none; color: #FFFFFF; font-weight: 500;">Designs</a>
+          <a href="#services" style="text-decoration: none; color: #FFFFFF; font-weight: 500;">Services</a>
+          <a href="#contact" style="text-decoration: none; color: #FFFFFF; font-weight: 500;">Contact</a>
+        </div>
+        
       </nav>
     </div>
   </header>
@@ -435,115 +435,81 @@
         <p class="tagline">Modern. Sharp. Quick.</p>
         <h1>Designs that <span class="highlight">stop thumbs</span> & close deals</h1>
         <p class="subtitle">
-          Logos • Flyers • Business cards • Fast delivery • Remote • Nationwide
+          Logos • Flyers • Business cards • Fast delivery • Remote •Nationwide<br>
+       
         </p>
         <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary">Order Your Design Now</a>
+          <a href="#contact" class="btn btn-primary"> Order Your Design Now</a>
           <a href="#portfolio" class="btn btn-outline">See Design Samples</a>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="carousel-container" id="portfolio">
-    <div class="container">
-      <h2>Our Recent Design Samples</h2>
-    </div>
-
-    <div class="carousel">
-      <div class="carousel-slides" id="slides">
-        <div class="slide">
-          <img src="Image 1.jpg" alt="Mena Empire's New Month Card">
-          <div class="overlay-text">
-            <h3>Mena Empire's New Month Card</h3>
-            <p>Ferbuary Greeting Flyer • 2026</p>
-          </div>
-        </div>
-        
-        <div class="slide">
-          <img src="image p.jpg" alt="SkillNaija's Training Flyer">
-          <div class="overlay-text">
-            <h3>SkillNaija's Training Flyer</h3>
-            <p>Virtual Online Training • 2025</p>
-          </div>
-        </div>
-        
-        <div class="slide">
-          <img src="image q.png" alt="Baby Teleios' Naming Banner">
-          <div class="overlay-text">
-            <h3>Baby Teleios' Naming Banner</h3>
-            <p>Designed Based on Client's Color and Theme Preference • 2026</p>
-          </div>
-        </div>
-        
-        <div class="slide">
-          <img src="image u.jpg" alt="SkillNaija Brands' Logo">
-          <div class="overlay-text">
-            <h3>SkillNaija Brands' Logo</h3>
-            <p>Based on Customers' Preference and Theme</p>
-          </div>
-        </div>
-      </div>
-
-      <button class="carousel-btn prev" onclick="moveSlide(-1)" aria-label="Previous">←</button>
-      <button class="carousel-btn next" onclick="moveSlide(1)" aria-label="Next">→</button>
-    </div>
-
-    <div class="carousel-dots" id="dots"></div>
-  </section>
-
-  <section id="services" style="background: rgba(107,72,255,0.06);">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 60px;">We Create What Performs</h2>
-      
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Logo Design</h3>
-          <p>Memorable, scalable marks that feel expensive — even on tight budgets. Fast delivery, no corners cut.</p>
-        </div>
-        <div class="service-card">
-          <h3>Flyers & Posters</h3>
-          <p>Event promos, product launches, church programmes, parties — built to get noticed and drive action in 48–72 hrs.</p>
-        </div>
-        <div class="service-card">
-          <h3>Business Cards</h3>
-          <p>Premium-feel cards people keep — spot UV, foil, textured stocks, minimalist or bold.</p>
-        </div>
-        <div class="service-card">
-          <h3>Social Media Graphics</h3>
-          <p>Consistent posts, stories, carousels & ads that match your voice and actually perform.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Ready to Make Your Brand Pop?</h2>
-      <p style="text-align:center; font-size:1.0rem; max-width:420px; margin:0 auto 3.5rem; color:#333;">
-        Drop your design request and let's create something sharp.<br><br>
-        <strong>Chat with Esther on Whatsapp:</strong> <a href="https://wa.link/3vw8bm">+234-9037201432</a><br>
-        <strong>Call:</strong> +234-903-720-1432<br><br>
-        24/7 • Nationwide • Remote
+   
+  </style>
+</head>
+<body>
+</body>
+</html>
       </p>
-      <div style="text-align:center;">
-        <a href="mailto:hello@inksnap.com" class="btn btn-primary" style="font-size:1.3rem; padding:1.2rem 3rem;">Send Message</a>
+   <section class="carousel-container">
+        <h2>Our Recent Design Samples</h2>
+      </div>
+   
+ <div class="carousel-container">
+
+  <div class="carousel-slides" id="slides">
+    
+    <div class="slide">
+      <img src="Image 1.jpg" alt="Image 1">
+      <div class="overlay-text" style="background: rgba(0, 0, 0, 0.65); padding: 8px 12px; border-radius: 8px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.6); max-width: 220px; width: fit-content;">
+        <h3 style="margin: 0 0 6px 0; color: white; font-size: 1.1em;">Mena Empire's New Month Card</h3>
+        <p style="margin: 0; opacity: 0.95; font-size: 0.95em;">Ferbuary Greeting Flyer • 2026</p>
       </div>
     </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>© 2026 InkSnap — Modern. Sharp. Quick.</p>
+    
+    <div class="slide">
+      <img src="image p.jpg" alt="image p">
+      <div class="overlay-text" style="background: rgba(0, 0, 0, 0.65); padding: 8px 12px; border-radius: 8px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.6); max-width: 220px; width: fit-content;">
+        <h3 style="margin: 0 0 6px 0; color: white; font-size: 1.1em;">SkillNaija's Training Flyer</h3>
+        <p style="margin: 0; opacity: 0.95; font-size: 0.95em;">Virtual Online Training • 2025</p>
+      </div>
     </div>
-  </footer>
+    
+    <div class="slide">
+      <img src="image q.png" alt="image q">
+      <div class="overlay-text" style="background: rgba(0, 0, 0, 0.65); padding: 8px 12px; border-radius: 8px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.6); max-width: 220px; width: fit-content;">
+        <h3 style="margin: 0 0 6px 0; color: white; font-size: 1.1em;">Baby Teleios' Naming Banner</h3>
+        <p style="margin: 0; opacity: 0.95; font-size: 0.95em;">Designed Based on Client's Color and Theme Preference • 2026</p>
+      </div>
+    </div>
+    
+    <div class="slide">
+      <img src="image u.jpg" alt="image u">
+      <div class="overlay-text" style="background: rgba(0, 0, 0, 0.65); padding: 8px 12px; border-radius: 8px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.6); max-width: 220px; width: fit-content;">
+        <h3 style="margin: 0 0 6px 0; color: white; font-size: 1.1em;">SkillNaija Brands' Logo</h3>
+        <p style="margin: 0; opacity: 0.95; font-size: 0.95em;">Based on Customers' Preference and Theme</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ✅ Buttons moved outside the slides container -->
+  <button class="carousel-btn prev" onclick="moveSlide(-1)">←</button>
+  <button class="carousel-btn next" onclick="moveSlide(1)">→</button>
+
+</div>
+
+  <div class="carousel-dots" id="dots"></div>
+</div>
+    
 
   <script>
-    const slidesContainer = document.getElementById('slides');
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+    const slides = document.getElementById('slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
     let current = 0;
 
+    // Create dots (optional)
     const dotsContainer = document.getElementById('dots');
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement('span');
@@ -555,14 +521,16 @@
     dots[0].classList.add('active');
 
     function updateDots() {
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === current);
+      });
     }
 
     function goToSlide(index) {
       if (index < 0) index = totalSlides - 1;
       if (index >= totalSlides) index = 0;
       current = index;
-      slidesContainer.style.transform = `translateX(-${current * 100}%)`;
+      slides.style.transform = `translateX(-${current * 100}%)`;
       updateDots();
     }
 
@@ -570,19 +538,78 @@
       goToSlide(current + direction);
     }
 
-    // Touch support
+    // Optional: add touch swipe support
     let touchStartX = 0;
     let touchEndX = 0;
-    slidesContainer.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
-    slidesContainer.addEventListener('touchend', e => {
-      touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX - touchEndX > 60) moveSlide(1);
-      if (touchEndX - touchStartX > 60) moveSlide(-1);
+
+    slides.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
     });
 
+    slides.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 60) moveSlide(1);   // swipe left → next
+      if (touchEndX - touchStartX > 60) moveSlide(-1);  // swipe right → prev
+    });
+  </script>
+
+      
+  <section id="services" style="background: rgba(107,72,255,0.06); padding: 80px 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      
+      <h2 style="text-align: center; margin-bottom: 60px;">We Create What Performs</h2>
+      
+      <div class="services-grid" style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+      ">
+        <div class="service-card" style="padding: 30px 20px;">
+          <h3>Logo Design</h3>
+          <p>Memorable, scalable marks that feel expensive — even on tight budgets. Fast delivery, no corners cut.</p>
+        </div>
+        <div class="service-card" style="padding: 30px 20px;">
+          <h3>Flyers & Posters</h3>
+          <p>Event promos, product launches, church programmes, parties — built to get noticed and drive action in 48–72 hrs.</p>
+        </div>
+        <div class="service-card" style="padding: 30px 20px;">
+          <h3>Business Cards</h3>
+          <p>Premium-feel cards people keep — spot UV, foil, textured stocks, minimalist or bold.</p>
+        </div>
+        <div class="service-card" style="padding: 30px 20px;">
+          <h3>Social Media Graphics</h3>
+          <p>Consistent posts, stories, carousels & ads that match your voice and actually perform.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Ready to Make Your Brand Pop?</h2>
+      <p style="text-align:center; font-size:1.0rem; max-width:250px; margin:0 auto 3.5rem; color:#000000;">
+        Drop your design request and let's create something sharp.<br><br>
+        <strong>Chat with Esther on Whatsapp:</strong> <a href="https://wa.link/3vw8bm">+234-9037201432</a><br>
+        <strong>Call:</strong> +234-903-720-1432<br><br>
+        24/7 • Nationwide • Remote
+      </p>
+      <div style="text-align:center;">
+        <a href="mailto:inksnap.support@gmail.com" class="btn btn-primary" style="font-size:1.3rem; padding:1.2rem 3rem;">Send Message</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 InkSnap — Modern. Sharp. Quick.</p>
+    </div>
+  </footer>
+
+  <script>
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
     });
   </script>
+
 </body>
-</html>
+  </html>
